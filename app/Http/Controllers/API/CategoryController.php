@@ -89,7 +89,7 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
             'meta_title' => 'required',
             'slug' => 'required|max:191',
-            'name' => 'require|max:191',
+            'name' => 'required|max:191',
         ]);
         if($validator->fails()){
             return response()->json([
