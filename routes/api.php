@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ProductController;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +28,10 @@ Route::get('edit-category', [CategoryController::class, 'edit']);
 Route::post('update-category/{id}', [CategoryController::class, 'update']);
 Route::delete('delete-category/{id}', [CategoryController::class, 'destroy']);
 Route::get('all-category', [CategoryController::class, 'allcategory']);
+
+//PRODUCTS APIs
+Route::post('store-product', [ProductController::class, 'store']);
+Route::get('view-product', [ProductController::class, 'index']);
+Route::delete('delete-product/{id}', [ProductController::class, 'destroy']);
+Route::get('edit-product/{id}', [ProductController::class, 'edit']);
+Route::post('update-product/{id}', [ProductController::class, 'update']);
