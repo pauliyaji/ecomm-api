@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 //to create the keygen file
+//napo just for test
 Route::get('/paulgen', function(){
     Artisan::call('key:generate');
     return response()->json("Keygen successful");
