@@ -185,7 +185,7 @@ class ProductController extends Controller
         {
             return response()->json([
                 'status'=>404,
-                'product_error'=>'Product with ID: '.$id . 'Not Found',
+                'product_error'=>'Product with ID: '.$id . ' Not Found',
             ]);
         }
 
