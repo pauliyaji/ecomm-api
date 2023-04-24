@@ -173,9 +173,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-        $product->delete();
         if($product)
         {
+            $product->delete();
             return response()->json([
                 'status'=>200,
                 'message'=>'Product with ID: '. $id .' has been successfully deleted',

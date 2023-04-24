@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 //to create the keygen file
 //napo just for test
-Route::get('/paulgen', function(){
+Route::get('/raulgen', function(){
     Artisan::call('key:generate');
     return response()->json("Keygen successful");
+});
+Route::get('/raulrefresh', function(){
+    Artisan::call('migrate:refresh');
+    return response()->json('Migration Refreshed');
 });
