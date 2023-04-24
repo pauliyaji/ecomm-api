@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//to create the .env file
+Route::get('/paulenv', function(){
+    Artisan::call('copy .env.example .env');
+    return response()->json("ENV file creation successful");
+});
