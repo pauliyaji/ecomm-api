@@ -53,8 +53,8 @@ class CategoryController extends Controller
         ]);
         if($validator->fails()){
             return response()->json([
-                'status'=>400,
-                'validation_errors'=> $validator->messages(),
+                'status'=>422,
+                'message'=> $validator->messages(),
             ]);
         }else{
             $category = new Category;
