@@ -14,19 +14,34 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return response()->json([
-            'status'=>200,
-            'category'=>$categories,
-        ]);
+        if($categories){
+            return response()->json([
+                'status'=>200,
+                'category'=>$categories,
+            ]);
+        }else{
+            return response()->json([
+                'status'=>400,
+                'message'=>'Data not found',
+            ]);
+        }
+
     }
 
     public function allcategory()
     {
         $categories = Category::where('status', 0)->get();
-        return response()->json([
-            'status'=>200,
-            'category'=>$categories,
-        ]);
+        if($categories){
+            return response()->json([
+                'status'=>200,
+                'category'=>$categories,
+            ]);
+        }else{
+            return response()->json([
+                'status'=>400,
+                'message'=>'Data not found',
+            ]);
+        }
     }
 
     public function store(Request $request)
