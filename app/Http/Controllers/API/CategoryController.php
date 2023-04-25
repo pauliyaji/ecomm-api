@@ -17,7 +17,7 @@ class CategoryController extends Controller
         if($categories){
             return response()->json([
                 'status'=>200,
-                'category'=>$categories,
+                'categories'=>$categories,
             ]);
         }else{
             return response()->json([
@@ -34,7 +34,7 @@ class CategoryController extends Controller
         if($categories){
             return response()->json([
                 'status'=>200,
-                'category'=>$categories,
+                'categories'=>$categories,
             ]);
         }else{
             return response()->json([
@@ -128,14 +128,14 @@ class CategoryController extends Controller
                         $file = $request->file('image');
                         $extension = $file->getClientOriginalExtension();
                         $filename = time() . '.' . $extension;
-                        $file->move('uploads/product/', $filename);
-                        $category->image = 'uploads/product/' . $filename;
+                        $file->move('uploads/category/', $filename);
+                        $category->image = 'uploads/category/' . $filename;
                     }else{
                         $file = $request->file('image');
                         $extension = $file->getClientOriginalExtension();
                         $filename = time() . '.' . $extension;
-                        $file->move('uploads/product/', $filename);
-                        $category->image = 'uploads/product/' . $filename;
+                        $file->move('uploads/category/', $filename);
+                        $category->image = 'uploads/category/' . $filename;
                     }
                 }
                 $category->update();
